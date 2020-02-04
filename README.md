@@ -1,6 +1,10 @@
 # Survival Portals
 
-**Installation:**
+Many teleporting mods offer quick `/home` `/back` or `/warp` commands which make the game far far too easy. However, Vanilla Minecraft has a transportation problem where it just takes too long. (And the Nether is too unreliable)
+
+This datapack adds the ability to construct a portal, which can be connected to another, allowing instant transportation between the two, at a small cost.The goal was to make this "survival friendly" but avoiding making it so easy that it feels like a "dirt-to-diamonds" type mod. It's intentionally expensive to create and continue to use the portals so that it's not too easy- teleporting should not be a quick and easy task!
+
+###### Installation:
 
 1. At the top of the page, click the green "Clone or Download" button.
 2. Select "Download Zip"
@@ -9,12 +13,6 @@
 5. Add a "datapacks" folder if it does not already exist inside of your world folder.
 6. Drop the extracted version of your datapack into this folder.
 7. If your game is running and you have cheats enabled, type `/reload` into the chat. This can also be done in your server. Otherwise, close and reopen your world and you're ready to go!
-
-## Description
-
-Many teleporting mods offer quick /home /back or /warp commands which make the game far far too easy. However, Vanilla Minecraft has a transportation problem where it just takes too long. (And the Nether is too unreliable)
-
-This datapack adds the ability to construct a portal, which can be connected to another, allowing instant transportation between the two, at a small cost.The goal was to make this "survival friendly" but avoiding making it so easy that it feels like a "dirt-to-diamonds" type mod. It's intentionally expensive to create and continue to use the portals so that it's not too easy- teleporting should not be a quick and easy task!
 
 ## Constructing the portal:
 
