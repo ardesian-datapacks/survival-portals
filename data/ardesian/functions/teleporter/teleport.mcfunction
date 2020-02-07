@@ -1,6 +1,7 @@
 # TeleportLocation
 
-# Particles are cool
+# *poof* away
+playsound minecraft:entity.enderman.teleport block @a[distance=..20] ~ ~ ~ 50 0.5
 execute at @s run particle minecraft:flash ~ ~0.5 ~
 execute at @s run particle minecraft:poof ~ ~0.5 ~ 0.5 0.5 0.5 0.2 20
 
@@ -12,3 +13,8 @@ execute as @s at @s run tp @s ~0.5 ~ ~0.5
 
 # Tp to stand
 tp @e[tag=TeleportingEntity] @s
+
+# *poof* in
+playsound minecraft:entity.enderman.teleport block @a[distance=..20] ~ ~ ~ 50 0.5
+execute at @s run particle minecraft:flash ~ ~0.5 ~
+execute at @s run particle minecraft:poof ~ ~0.5 ~ 0.5 0.5 0.5 0.2 20

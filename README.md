@@ -1,8 +1,13 @@
+<!--
+  TODO:
+  Cross dimension travel
+  Named portals, which name the Port Keys
+-->
 # Survival Portals
 
 Many teleporting mods offer quick `/home` `/back` or `/warp` commands which make the game far far too easy. However, Vanilla Minecraft has a transportation problem where it just takes too long. (And the Nether is too unreliable)
 
-This datapack adds the ability to construct a portal, which can be connected to another, allowing instant transportation between the two, at a small cost.The goal was to make this "survival friendly" but avoiding making it so easy that it feels like a "dirt-to-diamonds" type mod. It's intentionally expensive to create and continue to use the portals so that it's not too easy- teleporting should not be a quick and easy task!
+This datapack adds the ability to construct a portal, which can be connected to another, allowing instant transportation between the two, at a small cost.The goal was to make this "survival friendly" but avoiding making it so easy that it feels like a "dirt-to-diamonds" type mod. It's intentionally expensive to create and continue to use the portals so that it's not too easy- teleportation should not be a dead simple task!
 
 ###### Installation:
 
