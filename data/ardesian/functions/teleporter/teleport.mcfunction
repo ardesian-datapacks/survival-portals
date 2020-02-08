@@ -9,10 +9,16 @@ execute at @s run particle minecraft:poof ~ ~0.5 ~ 0.5 0.5 0.5 0.2 20
 execute as @s run execute store result entity @s Pos[0] double 1 run data get entity @e[tag=TeleportSource,sort=nearest,limit=1] ArmorItems[3].tag.portalPosX
 execute as @s run execute store result entity @s Pos[1] double 1 run data get entity @e[tag=TeleportSource,sort=nearest,limit=1] ArmorItems[3].tag.portalPosY
 execute as @s run execute store result entity @s Pos[2] double 1 run data get entity @e[tag=TeleportSource,sort=nearest,limit=1] ArmorItems[3].tag.portalPosZ
-execute as @s at @s run tp @s ~0.5 ~ ~0.5
+
+# Dimension fix
+execute at @s in minecraft:overworld if entity @e[tag=TeleportSource,sort=nearest,limit=1,nbt={ArmorItems:[{},{},{},{tag:{portalDim:0}}]}] run tp @s ~0.5 ~ ~0.5
+execute at @s in minecraft:the_nether if entity @e[tag=TeleportSource,sort=nearest,limit=1,nbt={ArmorItems:[{},{},{},{tag:{portalDim:-1}}]}] run tp @s ~0.5 ~ ~0.5
+execute at @s in minecraft:the_end if entity @e[tag=TeleportSource,sort=nearest,limit=1,nbt={ArmorItems:[{},{},{},{tag:{portalDim:1}}]}] run tp @s ~0.5 ~ ~0.5
 
 # Tp to stand
-tp @e[tag=TeleportingEntity] @s
+execute at @s in minecraft:overworld if entity @e[tag=TeleportSource,sort=nearest,limit=1,nbt={ArmorItems:[{},{},{},{tag:{portalDim:0}}]}] run tp @e[tag=TeleportingEntity] ~ ~ ~
+execute at @s in minecraft:the_nether if entity @e[tag=TeleportSource,sort=nearest,limit=1,nbt={ArmorItems:[{},{},{},{tag:{portalDim:-1}}]}] run tp @e[tag=TeleportingEntity] ~ ~ ~
+execute at @s in minecraft:the_end if entity @e[tag=TeleportSource,sort=nearest,limit=1,nbt={ArmorItems:[{},{},{},{tag:{portalDim:1}}]}] run tp @e[tag=TeleportingEntity] ~ ~ ~
 
 # *poof* in
 playsound minecraft:entity.enderman.teleport block @a[distance=..20] ~ ~ ~ 50 0.5

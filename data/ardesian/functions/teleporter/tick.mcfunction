@@ -1,8 +1,8 @@
 execute as @e[tag=zPortal] run function ardesian:teleporter/validate_portal
 
 # Ender Eye detection
-execute as @e[tag=zPortal,tag=!PortalLocationSet] at @s if data entity @e[distance=..1,sort=nearest,limit=1,nbt={OnGround:1b,Item:{id:"minecraft:ender_eye", tag:{PortKey:1b}}}] Thrower.L run function ardesian:teleporter/connect_portal
-execute as @e[nbt={OnGround:1b,Item:{id:"minecraft:ender_eye"}}] if data entity @s Thrower.L run function ardesian:teleporter/create_portal
+execute as @e[tag=zPortal,tag=!PortalLocationSet] at @s if data entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:ender_eye", tag:{PortKey:1b}}}] Thrower.L run function ardesian:teleporter/connect_portal
+execute as @e[nbt={Item:{id:"minecraft:ender_eye"}}] if data entity @s Thrower.L run function ardesian:teleporter/create_portal
 
 # Prime Teleporter
 execute as @e[tag=zPortal,tag=PortalLocationSet,tag=!PrimedPortal] at @s if entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:chorus_fruit"}}] run function ardesian:teleporter/power_portal
