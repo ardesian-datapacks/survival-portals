@@ -10,7 +10,7 @@ execute as @e[tag=AngleChecker] run execute store result entity @s Rotation[0] f
 execute as @e[tag=AngleChecker] at @s run summon minecraft:area_effect_cloud ^ ^ ^1 {Tags: ["CosSin"], Duration: 200}
 
 # Summon the item to throw, with some vertical motion to simulate a "throw"
-execute at @s run summon minecraft:item ~ ~1 ~ {Tags: ["Thrown"], Motion: [0.0d, 0.3d, 0.0d], Item: { id: "minecraft:ender_eye", Count: 1, tag: { display:{Name:"{\"text\":\"Port Key\"}"}, Enchantments: [{id: efficiency, lvl: 5s}], PortKey: 1b, HideFlags: 1b } }}
+execute at @s run summon minecraft:item ~ ~1 ~ {Tags: ["Thrown"], Motion: [0.0d, 0.3d, 0.0d], Item: { id: "minecraft:ender_eye", Count: 1, tag: { display:{Name:"{\"text\":\"Port Key\",\"italic\":\"false\"}"}, Enchantments: [{id: efficiency, lvl: 5s}], PortKey: 1b, HideFlags: 1b } }}
 
 # Put cos/sin as motion on thrown item at a scale of 0.1 to reduce throw distance
 execute as @e[tag=Thrown] run execute store result entity @s Motion[0] double 0.1 run data get entity @e[tag=CosSin,limit=1] Pos[0] 1

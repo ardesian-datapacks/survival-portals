@@ -1,4 +1,5 @@
 # zPortal
+
 execute at @s run tag @e[distance=..1,type=!minecraft:item,type=!minecraft:armor_stand] add TeleportingEntity
 tag @s remove PrimedPortal
 tag @s add TeleportSource
