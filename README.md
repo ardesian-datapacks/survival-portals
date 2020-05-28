@@ -43,5 +43,5 @@ A portal can be reset by simply breaking the redstone block or lantern, or by pl
 
 ## TODO:
 
-[] Allow non-solid blocks inside the teleporter (signs and/or buttons, for example)
-[] Allow teleporters to be named, and the port keys to include the rename.
+- [ ] Allow non-solid blocks inside the teleporter (signs and/or buttons, for example)
+- [ ] Allow teleporters to be named, and the port keys to include the rename.
