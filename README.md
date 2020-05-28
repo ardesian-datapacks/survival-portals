@@ -5,9 +5,9 @@
 -->
 # Survival Portals
 
-Many teleporting mods offer quick `/home` `/back` or `/warp` commands which make the game far far too easy. However, Vanilla Minecraft has a transportation problem where it just takes too long. (And the Nether is too unreliable)
+Many teleporting mods offer quick `/home` `/back` or `/warp` commands which make the game far far too easy. However, Vanilla Minecraft has a transportation problem where it just takes too long to get far distances. (And the Nether is too unreliable)
 
-This datapack adds the ability to construct a portal, which can be connected to another, allowing instant transportation between the two, at a small cost.The goal was to make this "survival friendly" but avoiding making it so easy that it feels like a "dirt-to-diamonds" type mod. It's intentionally expensive to create and continue to use the portals so that it's not too easy- teleportation should not be a dead simple task!
+This datapack adds the ability to construct a portal, which can be connected to another, allowing instant teleportation between the two at a small cost. The goal was to make this "survival friendly" but avoiding making it so easy that it feels like a "dirt-to-diamonds" type mod. It's intentionally expensive to create and continue to use the portals so that it's not too easy- teleportation should not be a simple task!
 
 ###### Installation:
 
@@ -35,8 +35,13 @@ You can throw a fresh Eye of Ender into an existing portal to create an addition
 
 ## Using the portal:
 
-By default, the portals are passive- they do not teleport anything until they are primed. Priming a portal is done by throwing a Chorus Fruit into it. This will consume the Chorus Fruit, but allow you to travel through the portal. There is no portal cooldown, and once the portal is primed it will remain primed until somebody travels through.
+By default, the portals are passive- they do not teleport anything until they are primed. Priming a portal is done by throwing a Chorus Fruit into it. This will consume the Chorus Fruit, but allow you to travel through the portal. There is no portal cooldown, and once the portal is primed it will remain primed until somebody/something travels through.
 
 ## Deconstructing portals
 
 A portal can be reset by simply breaking the redstone block or lantern, or by placing any block inside of the portal. **Note: This does NOT destroy the other end of the portal.** The opposite portal will still teleport you to the same location where this portal was once set up. After deconstructing a portal, a new Port Key can be thrown in to give it a new location.
+
+## TODO:
+
+[] Allow non-solid blocks inside the teleporter (signs and/or buttons, for example)
+[] Allow teleporters to be named, and the port keys to include the rename.
