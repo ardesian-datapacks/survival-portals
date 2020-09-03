@@ -26,7 +26,7 @@ execute as @s at @s if block ~ ~ ~ minecraft:air run execute as @s at @s if bloc
 execute at @s[tag=zPortalEyeRedstone,tag=zPortalEyeLantern,tag=zPortalEyeSpace] as @s unless entity @e[tag=zPortal,distance=..1] run function ardesian:teleporter/summon_portal
 
 # --connect
-execute at @s run execute as @e[tag=zPortal,tag=!PortalLocationSet,distance=..1] at @s if data entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:ender_eye",tag:{PortKey:1b}}}] Thrower.L run function ardesian:teleporter/connect_portal
+execute at @s run execute as @e[tag=zPortal,tag=!PortalLocationSet,distance=..1] at @s if data entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:ender_eye",tag:{PortKey:1b}}}] Thrower run function ardesian:teleporter/connect_portal
 
 # --convert
 execute at @s[tag=zPortalEyeRedstone,tag=zPortalEyeLantern,tag=zPortalEyeSpace] as @s if entity @e[tag=zPortal,distance=..1] run tag @e[tag=zPortal,distance=..1,limit=1,sort=nearest] add SummonPortKey
