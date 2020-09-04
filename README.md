@@ -22,7 +22,7 @@ This datapack adds the ability to construct a portal, which can be connected to 
 ## Constructing the portal:
 
 The base must be a redstone block, followed by 3 spaces (air/empty blocks) vertically, finally a Seastone Lantern crowns the top.
-![Portal Demonstration](https://preview.redd.it/henvwthg9ve41.png?width=1920&format=png&auto=webp&s=bd5235014f878f7ad0b691bbea68e5766dce43eb)
+![Portal Demonstration](https://user-images.githubusercontent.com/8505362/92209906-0ad65d00-ee4b-11ea-920e-fbe6685b20e8.png)
 (Back wall of the portal is optional, I used colors to know which portal goes where)
 
 ## Activating the portal:
@@ -45,3 +45,4 @@ A portal can be reset by simply breaking the redstone block or lantern, or by pl
 
 - [ ] Allow non-solid blocks inside the teleporter (signs and/or buttons, for example)
 - [ ] Allow teleporters to be named, and the port keys to include the rename.
+- [ ] Maintain facing direction, so you almost come out of the portal facing out rather than the same direction you went in.
