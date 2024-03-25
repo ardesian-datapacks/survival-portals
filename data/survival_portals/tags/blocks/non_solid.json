@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:air",
+    "#minecraft:buttons",
+    "#minecraft:wall_post_override",
+    "#minecraft:wool_carpets",
+    "#minecraft:trapdoors",
+    "#minecraft:slabs",
+    "#minecraft:leaves",
+    "#minecraft:rails"
+  ]
+}

@@ -3,7 +3,7 @@
 # Check layout of blocks is valid
 execute as @s at @s if block ~ ~-1 ~ minecraft:redstone_block run tag @s add zPortalEyeRedstone
 execute as @s at @s if block ~ ~3 ~ minecraft:sea_lantern run tag @s add zPortalEyeLantern
-execute as @s at @s if block ~ ~ ~ minecraft:air run execute as @s at @s if block ~ ~1 ~ minecraft:air run execute as @s at @s if block ~ ~2 ~ minecraft:air run tag @s add zPortalEyeSpace
+execute as @s at @s if block ~ ~ ~ #survival_portals:non_solid run execute as @s at @s if block ~ ~1 ~ #survival_portals:non_solid run execute as @s at @s if block ~ ~2 ~ #survival_portals:non_solid run tag @s add zPortalEyeSpace
 
 # if zPortal
 #   If Eye == PortKey
