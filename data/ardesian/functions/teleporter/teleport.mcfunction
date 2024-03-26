@@ -1,4 +1,4 @@
-# TeleportLocation
+# @e[tag=TeleportLocation]
 
 # *poof* away
 playsound minecraft:entity.enderman.teleport block @a[distance=..20] ~ ~ ~ 50 0.5
