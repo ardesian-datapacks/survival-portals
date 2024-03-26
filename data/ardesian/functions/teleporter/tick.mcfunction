@@ -5,7 +5,7 @@ execute as @e[tag=zPortal,tag=!PortalLocationSet] at @s if data entity @e[distan
 execute as @e[nbt={Item:{id:"minecraft:ender_eye"}}] if data entity @s Thrower run function ardesian:teleporter/create_portal
 
 # Prime Teleporter
-execute as @e[tag=zPortal,tag=PortalLocationSet,tag=!PrimedPortal] at @s if entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:chorus_fruit"}}] run function ardesian:teleporter/power_portal
+execute as @e[tag=zPortal,tag=PortalLocationSet,tag=!PrimedPortal] at @s positioned ~-0.5 ~-0.5 ~-0.5 if entity @e[dx=0,dz=0,dy=4,sort=nearest,limit=1,nbt={Item:{id:"minecraft:chorus_fruit"}}] run function ardesian:teleporter/power_portal
 
 # Teleporter functionality
 execute as @e[tag=zPortal,tag=SummonPortKey] run function ardesian:teleporter/summon_port_key
