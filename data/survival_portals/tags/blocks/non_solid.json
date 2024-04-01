@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraft:air",
+    "#minecraft:all_signs",
     "#minecraft:buttons",
     "#minecraft:wall_post_override",
     "#minecraft:wool_carpets",
