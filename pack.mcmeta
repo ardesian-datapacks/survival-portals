@@ -1,6 +1,10 @@
- {
-       "pack": {
-           "pack_format": 5,
-           "description": "Rocco Test Datapack"
-       }
-   }
+{
+  "pack": {
+    "pack_format": 71,
+    "description": "Rocco Test Datapack",
+    "supported_formats": {
+      "min_inclusive": 48,
+      "max_inclusive": 71
+    }
+  }
+}
