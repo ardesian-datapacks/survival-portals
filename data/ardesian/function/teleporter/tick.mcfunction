@@ -1,14 +1,29 @@
-execute as @e[tag=zPortal] run function ardesian:teleporter/validate_portal
+# PortKey == Ender Eye that has been set to a portal
+# zPortal == armor_stand that acts as a placeholder of the portal
 
-# Ender Eye detection
-execute as @e[tag=zPortal,tag=!PortalLocationSet] at @s if data entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:ender_eye", tag:{PortKey:1b}}}] Thrower run function ardesian:teleporter/connect_portal
-execute as @e[nbt={Item:{id:"minecraft:ender_eye"}}] if data entity @s Thrower run function ardesian:teleporter/create_portal
+execute as @e[tag=zPortal] at @s \
+  if entity @p[distance=..32] \
+  run function ardesian:teleporter/tick_portal
 
-# Prime Teleporter
-execute as @e[tag=zPortal,tag=PortalLocationSet,tag=!PrimedPortal] at @s positioned ~-0.5 ~-0.5 ~-0.5 if entity @e[dx=0,dz=0,dy=4,sort=nearest,limit=1,nbt={Item:{id:"minecraft:chorus_fruit"}}] run function ardesian:teleporter/power_portal
+execute as @e[nbt={Item:{id:"minecraft:ender_eye"}}] at @s \
+  if entity @p[distance=..32] if data entity @s Thrower \
+  run function ardesian:teleporter/create_portal
 
-# Teleporter functionality
-execute as @e[tag=zPortal,tag=SummonPortKey] run function ardesian:teleporter/summon_port_key
-execute as @e[tag=zPortal,tag=!PortalLocationSet] at @s run title @p[distance=..1] actionbar {"text": "No Destination", "color": "yellow"}
-execute as @e[tag=zPortal,tag=PortalLocationSet,tag=!PrimedPortal] at @s run title @p[distance=..1] actionbar {"text": "No Power", "color": "yellow"}
-execute as @e[tag=zPortal,tag=PortalLocationSet,tag=PrimedPortal] at @s if entity @e[distance=..1,type=!minecraft:item,type=!minecraft:armor_stand] run function ardesian:teleporter/init_teleport
+# TODO:
+  # [√] FIXME: Portals don't work cross dimension yet.
+  # [ ] Portals seem to take some time to warm up? Have to throw a fruit into each one first?
+    # [ ] FIXME: Portals should work immediately and reliably.
+  # [ ] Move floating PortKey farther away from block
+  # [ ] Ensure ground items (chorus) are picked up
+  # [ ] When throwing a PortKey into an existing portal...
+    # [ ] * Do nothing? Not even change the port key or anything. Just ignore it. Leave it on the ground.
+    # [ ] * Update the portal to be the new location + drop a port key for the current portal
+  # [ ] Quickport!
+    # [ ] PortKey + Fruit on the ground together creates a temporary/single-use portal back to the location of the PortKey
+
+
+# Show Pos:
+# tellraw @a [ \
+#   {"text":"TeleportSource Pos: "}, \
+#   {"nbt":"Pos","entity":"@e[tag=TeleportSource,limit=1,sort=nearest]"} \
+# ]

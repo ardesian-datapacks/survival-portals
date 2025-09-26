@@ -1,9 +1,10 @@
-# Scope of Ender Eye
+# @s[nbt={Item:{id:"minecraft:ender_eye"}}]if entity @p[distance=..32] if data entity @s Thrower
 
-# Check layout of blocks is valid
-execute as @s at @s if block ~ ~-1 ~ minecraft:redstone_block run tag @s add zPortalEyeRedstone
-execute as @s at @s if block ~ ~3 ~ minecraft:sea_lantern run tag @s add zPortalEyeLantern
-execute as @s at @s if block ~ ~ ~ #survival_portals:non_solid run execute as @s at @s if block ~ ~1 ~ #survival_portals:non_solid run execute as @s at @s if block ~ ~2 ~ #survival_portals:non_solid run tag @s add zPortalEyeSpace
+execute unless block ~ ~-1 ~ minecraft:redstone_block run return 0
+execute unless block ~ ~3 ~ minecraft:sea_lantern run return 0
+execute unless block ~ ~ ~ #survival_portals:non_solid run return 0
+execute unless block ~ ~1 ~ #survival_portals:non_solid run return 0
+execute unless block ~ ~2 ~ #survival_portals:non_solid run return 0
 
 # if zPortal
 #   If Eye == PortKey
@@ -21,18 +22,29 @@ execute as @s at @s if block ~ ~ ~ #survival_portals:non_solid run execute as @s
 # --summon
 # --convert
 
+execute unless predicate ardesian:is_port_key run say NOT PortKey
+execute if predicate ardesian:is_port_key run say IS PortKey
 
+### Inside frame, but no zPortal exists (yet
+# !zPortal
 # --summon
-execute at @s[tag=zPortalEyeRedstone,tag=zPortalEyeLantern,tag=zPortalEyeSpace] as @s unless entity @e[tag=zPortal,distance=..1] run function ardesian:teleporter/summon_portal
+execute unless entity @e[tag=zPortal,limit=1,sort=nearest,distance=..1] run \
+  function ardesian:teleporter/summon_portal
 
+# zPortal
+# Eye == PortKey
 # --connect
-execute at @s run execute as @e[tag=zPortal,tag=!PortalLocationSet,distance=..1] at @s if data entity @e[distance=..1,sort=nearest,limit=1,nbt={Item:{id:"minecraft:ender_eye",tag:{PortKey:1b}}}] Thrower run function ardesian:teleporter/connect_portal
+execute if predicate ardesian:is_port_key run \
+  execute as @e[tag=zPortal,tag=!PortalLocationSet,limit=1,sort=nearest,distance=..1] run \
+  function ardesian:teleporter/connect_portal
 
 # --convert
-execute at @s[tag=zPortalEyeRedstone,tag=zPortalEyeLantern,tag=zPortalEyeSpace] as @s if entity @e[tag=zPortal,distance=..1] run tag @e[tag=zPortal,distance=..1,limit=1,sort=nearest] add SummonPortKey
-kill @e[tag=zPortalEyeRedstone,tag=zPortalEyeLantern,tag=zPortalEyeSpace]
+execute as @e[tag=zPortal,limit=1,sort=nearest,distance=..1] run say --convert
+execute at @s run tag @e[tag=zPortal,limit=1,sort=nearest,distance=..1] add SummonPortKey
 
-# Remove tags from other eyes
-execute as @e[tag=zPortalEyeRedstone] run tag @s remove zPortalEyeRedstone
-execute as @e[tag=zPortalEyeLantern] run tag @s remove zPortalEyeLantern
-execute as @e[tag=zPortalEyeSpace] run tag @s remove zPortalEyeSpace
+# NOTE: Should only spit out a PortKey for the FIRST portal, not for
+# Should NOT spit out a PortKey if the portal already has a PortKeyDisplay
+
+# Consume the eye
+say Consume
+kill @s
