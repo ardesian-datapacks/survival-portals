@@ -19,8 +19,8 @@ execute as @s[tag=SummonPortKey] run function ardesian:teleporter/summon_port_ke
 # 𐄂   run function ardesian:teleporter/create_portal
 
 ### Prime Teleporter
-execute as @s[tag=PortalLocationSet,tag=!PrimedPortal] at @s \
-  if entity @e[dx=0,dz=0,dy=4,sort=nearest,limit=1,nbt={Item:{id:"minecraft:chorus_fruit"}}] \
+execute as @s[tag=PortalLocationSet,tag=!PrimedPortal] at @s positioned ~ ~-1 ~ \
+  if entity @e[dx=0,dz=0,dy=3,sort=nearest,limit=1,nbt={Item:{id:"minecraft:chorus_fruit"}}] \
   run function ardesian:teleporter/power_portal
 
 ### Teleporter functionality
