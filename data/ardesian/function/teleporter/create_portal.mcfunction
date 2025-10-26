@@ -26,8 +26,6 @@ execute unless block ~ ~2 ~ #survival_portals:non_solid run return 0
 # --convert
 # --consume
 
-### TODO: Throwing another Ender Eye into a pending portal should still return a new one
-
 # execute if predicate ardesian:is_port_key run say IS PortKey
 # execute unless predicate ardesian:is_port_key run say NOT PortKey
 execute if predicate ardesian:is_port_key run \
@@ -35,6 +33,12 @@ execute if predicate ardesian:is_port_key run \
   run return 0
 
 # execute at @s run particle minecraft:portal ~ ~1.5 ~ 0 0 0 0.1 10
+
+### zPortal exists, but not connected and another Eye thrown in
+# --summon (connects the portal to the PortKey location + returns a new PortKey for this portal)
+execute unless predicate ardesian:is_port_key run \
+  execute as @e[tag=zPortal,tag=!PortalLocationSet,limit=1,sort=nearest,distance=..2] run \
+  tag @s add SummonPortKey
 
 ### Inside frame, but no zPortal exists (yet
 # !zPortal
