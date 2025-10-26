@@ -2,5 +2,5 @@ execute at @s run particle minecraft:poof ~ ~ ~ 0.1 0.1 0.1 0.1 15
 
 playsound minecraft:block.glass.break block @a[distance=..20] ~ ~ ~ 50 0.5
 
-kill @e[tag=PortKeyDisplay,limit=1,sort=nearest,distance=..4]
+kill @e[tag=PortKeyDisplay,limit=1,sort=nearest,distance=..3]
 kill @s

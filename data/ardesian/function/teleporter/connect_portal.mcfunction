@@ -7,7 +7,7 @@ execute as @e[limit=1,sort=nearest,distance=..1] if predicate ardesian:is_port_k
   tag @s add PortKey
 
 # Summon Display
-execute at @s run summon item_display ~ ~1.1 ~ { \
+execute at @s run summon item_display ~ ~0.5 ~ { \
   Tags: ["PortKeyDisplay"], \
   item: { \
     id: "minecraft:ender_eye", \

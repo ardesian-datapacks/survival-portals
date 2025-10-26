@@ -26,6 +26,8 @@ execute unless block ~ ~2 ~ #survival_portals:non_solid run return 0
 # --convert
 # --consume
 
+### TODO: Throwing another Ender Eye into a pending portal should still return a new one
+
 # execute if predicate ardesian:is_port_key run say IS PortKey
 # execute unless predicate ardesian:is_port_key run say NOT PortKey
 execute if predicate ardesian:is_port_key run \
