@@ -1,6 +1,6 @@
 # @e[tag=zPortal, tag=SummonPortKey]
 
-say SummonPortKey
+# say SummonPortKey
 tag @s remove SummonPortKey
 
 function ardesian:teleporter/throw

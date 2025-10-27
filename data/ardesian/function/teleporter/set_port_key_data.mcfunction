@@ -1,6 +1,6 @@
 # @e[limit=1,sort=nearest,nbt={Item:{tag:{PortKey:1b}}}]
 
-say "Setting PortKey data"
+# say "Setting PortKey data"
 data modify entity @s Item.components."minecraft:custom_data".portalPos \
   set value [0.0d,0.0d,0.0d]
 execute as @s \
