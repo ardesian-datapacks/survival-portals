@@ -1,6 +1,7 @@
- {
-       "pack": {
-           "pack_format": 5,
-           "description": "Rocco Test Datapack"
-       }
-   }
+{
+  "pack": {
+    "description": "Survival Portals - build linked teleporters with a Port Key",
+    "min_format": [107, 1],
+    "max_format": [107, 1]
+  }
+}

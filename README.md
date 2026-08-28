@@ -1,6 +1,5 @@
 <!--
   TODO:
-  Cross dimension travel
   Named portals, which name the Port Keys
 -->
 # Survival Portals
@@ -37,6 +36,16 @@ You can throw a fresh Eye of Ender into an existing portal to create an addition
 
 By default, the portals are passive- they do not teleport anything until they are primed. Priming a portal is done by throwing a Chorus Fruit into it. This will consume the Chorus Fruit, but allow you to travel through the portal. There is no portal cooldown, and once the portal is primed it will remain primed until somebody/something travels through.
 
+## Cross-dimension travel
+
+Portals work in the Overworld, the Nether and the End, and a Port Key remembers which
+dimension its portal was built in. Throw a Port Key made in the Overworld into a portal
+in the Nether and that Nether portal will send you to the Overworld.
+
+Note that a portal only sends you *to* the dimension its Port Key came from - travel is
+one-way per portal, exactly as it is within a single dimension. Feed each end the other's
+Port Key for a bi-directional link.
+
 ## Deconstructing portals
 
 A portal can be reset by simply breaking the redstone block or lantern, or by placing any block inside of the portal. **Note: This does NOT destroy the other end of the portal.** The opposite portal will still teleport you to the same location where this portal was once set up. After deconstructing a portal, a new Port Key can be thrown in to give it a new location.
@@ -46,3 +55,4 @@ A portal can be reset by simply breaking the redstone block or lantern, or by pl
 - [ ] Allow non-solid blocks inside the teleporter (signs and/or buttons, for example)
 - [ ] Allow teleporters to be named, and the port keys to include the rename.
 - [ ] Maintain facing direction, so you almost come out of the portal facing out rather than the same direction you went in.
+- [x] Cross-dimension travel
