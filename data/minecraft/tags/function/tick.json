@@ -1,5 +1,6 @@
 {
   "values":[
-  	"ardesian:teleporter/tick"
+  	"ardesian:teleporter/tick",
+  	"ardesian:quickport/tick"
   ]
 }
